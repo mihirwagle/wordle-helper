@@ -21,7 +21,7 @@ def play_game():
     for round in range(5):
         print("Round ",(round+1))
         input_str = input("Enter input: ").upper()
-        if len(input_str) != 11 or " " not in input:
+        if len(input_str) != 11 or " " not in list(input_str):
             print("Invalid entry, exiting helper.")
             return
         input_split = input_str.split()

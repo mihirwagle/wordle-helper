@@ -11,6 +11,8 @@ def filter_words(guess_word, result, words):
         if result[i] == Result.Green:
             words = [word for word in words if word[i] == guess_word[i]]
             green.append(guess_word[i])
+        if result[i] == Result.Yellow:
+            words = [word for word in words if word[i] != guess_word[i]]
     # print("Green: ", green)
     # Filter by the letters we know aren't in the secret word
     forbidden_letters = [guess_word[i] for i in range(0, len(guess_word)) if (result[i] == Result.Gray and guess_word[i] not in green)]

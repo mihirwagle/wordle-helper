@@ -20,9 +20,8 @@ def filter_words(guess_word, result, words):
     words = [word for word in words if not any(letter in word for letter in forbidden_letters)]
 
     # Filter by the letters we know should be in the word.
-    # No filtering by yellow since it could be one or more.
-    existing_letters = [guess_word[i] for i in range(0, len(guess_word)) if result[i] != Result.Gray]
+    existing_letters = [guess_word[i] for i in range(0, len(guess_word)) if result[i] == Result.Yellow]
     if existing_letters:
-        words = [word for word in words if any(letter in word for letter in existing_letters)]
+        words = [word for word in words if all(letter in word for letter in existing_letters)]
 
     return words

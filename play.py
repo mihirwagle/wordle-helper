@@ -31,6 +31,9 @@ def play_game():
             print("Invalid entry, exiting helper.")
             return
         # Build results enum using colors
+        if color == "GGGGG":
+            print("You got it!")
+            break
         results = build_results(color)
         words = filter_words(last_guess, results, words)
         print("Possible words are: ")

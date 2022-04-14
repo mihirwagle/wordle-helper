@@ -1,0 +1,18 @@
+# Initial request
+POST http://127.0.0.1:5187/first HTTP/1.1
+Content-Type: application/json
+
+{
+    "word": "CUMIN",
+    "color": "Y_YYY"
+}
+
+# Subsequent request
+POST http://127.0.0.1:5187/subsequent HTTP/1.1
+Content-Type: application/json
+
+{
+    "word": "STOOL",
+    "color": "GGG__",
+    "words": ["STOOL", "STOVE", "STOMP", "SOOTH", "SLOTH", "STOOD", "STOLE", "STOCK", "STOIC", "SOOTY", "STOKE", "SMOTE", "STOOP", "SCOTS", "SHOTE", "SHOTS", "SLOTS", "SOOTE", "SOOTS", "SPOTS", "STOAE", "STOAI", "STOAS", "STOBS", "STOEP", "STOGY", "STOMA", "STOOK", "STOPE", "STOPS", "STOSS", "STOTS", "STOUP", "STOWP", "STOWS", "SWOTS"]
+}

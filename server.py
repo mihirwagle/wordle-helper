@@ -18,19 +18,19 @@ def build_results(color):
 @app.route('/first', methods = ['POST'])
 def first():
     try:
-        data = request.get_json(force=True)[0]
+        data = request.get_json(force=True)
         word = data['word'].upper()
         color = data['color'].upper()
         results = build_results(color)
         word_list = filter_words(word, results, words)
         return jsonify({"words":word_list})
     except Exception as e:
-        return 'Request has to be a post request with JSON body [{"word": ..., "color": ..., "words": ...}]', 400
+        return 'Request has to be a post request with JSON body {"word": ..., "color": ..., "words": ...}', 400
 
 @app.route('/subsequent', methods = ['POST'])
 def subsequent():
     try:
-        data = request.get_json(force=True)[0]
+        data = request.get_json(force=True)
         word = data['word'].upper()
         color = data['color'].upper()
         word_list = data['words']
@@ -38,6 +38,6 @@ def subsequent():
         word_list = filter_words(word, results, word_list)
         return jsonify({"words":word_list})
     except Exception as e:
-        return 'Request has to be a post request with JSON body [{"word": ..., "color": ..., "words": ...}]', 400
+        return 'Request has to be a post request with JSON body {"word": ..., "color": ..., "words": ...}', 400
 
 app.run(port = 5187)

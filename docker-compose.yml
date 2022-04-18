@@ -1,0 +1,6 @@
+services:
+  wordle-helper:
+    build:
+      context: .
+    ports:
+      - "5187:5000"

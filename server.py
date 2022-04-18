@@ -40,4 +40,4 @@ def subsequent():
     except Exception as e:
         return 'Request has to be a post request with JSON body {"word": ..., "color": ..., "words": ...}', 400
 
-app.run(port = 5187)
+app.run("0.0.0.0")
